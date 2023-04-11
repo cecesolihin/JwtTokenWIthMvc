@@ -131,7 +131,7 @@ namespace JWTAuth.Repository
             }
         }
 
-        public void UpdateChecklistItemByChecklistId(int checklistId, ChecklistItem checklistItem)
+        public void UpdateChecklistItemByChecklistId(int checklistId,ChecklistItem checklistItem)
         {
             var sql = @"Update dbo.ChecklistItem set ItemName=@ItemName where ChecklistId=@ChecklistId";
 
@@ -140,6 +140,8 @@ namespace JWTAuth.Repository
                 var exec = db.Execute(sql, new {  checklistItem.ItemName, checklistId});
             }
         }
+
+    
 
         public void UpdateChecklistsItemByChecklistItemId(int checklistId, ChecklistItem checklistItem)
         {
@@ -150,7 +152,7 @@ namespace JWTAuth.Repository
 
             using (SqlConnection db = new SqlConnection(connectionString))
             {
-                var exec = db.Execute(sql, new { checklistItem.ItemName , checklistId, checklistItem.ChecklistItemId});
+                var exec = db.Execute(sql, new { checklistItem.ItemName, checklistId, checklistItem.ChecklistItemId });
             }
         }
     }
