@@ -7,5 +7,7 @@ namespace JWTAuth.Models
 {
     public class Checklist
     {
+        public int ChecklistId { get; set; }
+        public string Name { get; set; }
     }
 }

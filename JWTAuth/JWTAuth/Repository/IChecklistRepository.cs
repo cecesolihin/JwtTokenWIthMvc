@@ -10,18 +10,18 @@ namespace JWTAuth.Repository
 {
     public interface IChecklistRepository
     {
-        IList<Checklist> GetAllChecklists();
-        void Create(Checklist checklist);
-        void Update(Checklist checklist);
-        void Delete(int checklistId);
+        IList<Checklist> GetAllChecklist();
+        void CreateChecklist(Checklist checklist);
+        void UpdateChecklist(Checklist checklist);
+        void DeleteChecklist(int checklistId);
 
         //Checklist Item
-        IList<ChecklistItem> GetAllChecklistsItemByChecklistId(int checklistId);
-        void CreateItemByChecklistId(Checklist checklist);
-        IList<ChecklistItem> GetChecklistsItemById(int checklistId, int checklistItemId);
-        void UpdateChecklistsItemByChecklistId(int checklistId, ChecklistItem checklistItem);
-        void DeleteChecklistsItemByChecklistId(int checklistId, int checklistItemId);
-        //void UpdateChecklistsItemByChecklistId(int checklistId, ChecklistItem checklistItem);
+        IList<ChecklistItem> GetAllChecklistItemByChecklistId(int checklistId);
+        void CreateItemByChecklistId(int checklistId,ChecklistItem checklistItem);
+        IList<ChecklistItem> GetChecklistItemById(int checklistId, int checklistItemId);
+        void UpdateChecklistItemByChecklistId(int checklistId, ChecklistItem checklistItem);
+        void DeleteChecklistItemByChecklistId(int checklistId, int checklistItemId);
+        void UpdateChecklistsItemByChecklistItemId(int checklistId, ChecklistItem checklistItem);
 
     }
 }
