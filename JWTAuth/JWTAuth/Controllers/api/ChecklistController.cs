@@ -142,7 +142,7 @@ namespace JWTAuth.Controllers
         }
         //Update status checklist item by checklist item id
         //[System.Web.Http.Route("{checklistid}/item/{checklistitemid}")]
-        [System.Web.Http.Route("~/api/checklist/{checklistid:int}/item/{checklistitemid:int}")]
+        [System.Web.Http.Route("~/api/checklist/{checklistid:int}/item")]
         [System.Web.Http.HttpPut]
         public HttpResponseMessage UpdateChecklistItemByChecklistId(int checklistId, ChecklistItem checklistItem)
         {
