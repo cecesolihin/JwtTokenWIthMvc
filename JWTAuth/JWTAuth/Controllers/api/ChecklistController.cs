@@ -9,14 +9,21 @@ using JWTAuth.Models;
 using JWTAuth.Repository;
 namespace JWTAuth.Controllers
 {
+   //[System.Web.Http.RoutePrefix("api/checklist")]
     public class ChecklistController : ApiController
     {
-        private readonly IChecklistRepository repo;
-        public ChecklistController(IChecklistRepository checklistRepository)
+        ///private readonly IChecklistRepository repo;
+        private ChecklistRepository repo = new ChecklistRepository();
+        public ChecklistController()
         {
-            repo = checklistRepository;
+                
         }
+        ////public ChecklistController(IChecklistRepository checklistRepository)
+        ////{
+        ////    repo = checklistRepository;
+        ////}
         //Get All Checklist
+       // [System.Web.Http.Route("checklist")]
         [System.Web.Http.HttpGet]
         public IList<Checklist> GetAllChecklist()
         {
@@ -30,9 +37,10 @@ namespace JWTAuth.Controllers
 
                 throw;
             }
-            return (IList<Checklist>)Ok(data);
+            return data;
         }
         //Create new checklist
+        //[System.Web.Http.Route("checklist")]
         [System.Web.Http.HttpPost]
         public HttpResponseMessage CreateChecklist(Checklist checklist)
         {
@@ -40,7 +48,7 @@ namespace JWTAuth.Controllers
             HttpResponseMessage responseMessage = new HttpResponseMessage();
             try
             {
-                repo.CreateChecklist(checklist);  
+                repo.CreateChecklist(checklist);
                 responseMessage = Request.CreateResponse(HttpStatusCode.OK, "success");
             }
             catch (System.Exception ex)
@@ -53,6 +61,8 @@ namespace JWTAuth.Controllers
             return responseMessage;
         }
         //Delete checklist by ID
+        //[System.Web.Http.Route("{checklistid:int}")]
+        [System.Web.Http.Route("~/api/checklist/{checklistid:int}/")]
         [System.Web.Http.HttpDelete]
         public HttpResponseMessage DeleteChecklist(int checklistId)
         {
@@ -73,6 +83,8 @@ namespace JWTAuth.Controllers
             return responseMessage;
         }
         //Get all Checklist Item by checklist id
+       // [System.Web.Http.Route("{checklistid}/item")]
+        [System.Web.Http.Route("~/api/checklist/{checklistid:int}/item")]
         [System.Web.Http.HttpGet]
         public IList<ChecklistItem> GetAllChecklistItembyChecklistId(int checklistId)
         {
@@ -86,9 +98,11 @@ namespace JWTAuth.Controllers
 
                 throw;
             }
-            return (IList<ChecklistItem>)Ok(data);
+            return data;
         }
         //Create new checklist item in checklist
+        //[System.Web.Http.Route("{checklistid}/item")]
+        [System.Web.Http.Route("~/api/checklist/{checklistid:int}/item")]
         [System.Web.Http.HttpPost]
         public HttpResponseMessage CreateChecklistItem(int checklistId, ChecklistItem checklistItem)
         {
@@ -109,23 +123,27 @@ namespace JWTAuth.Controllers
             return responseMessage;
         }
         //Get checklist item in checklist by checklist id
+        
+        [System.Web.Http.Route("~/api/checklist/{checklistid:int}/item/{checklistitemid:int}")]
         [System.Web.Http.HttpGet]
-        public IList<ChecklistItem> GetChecklistItembyChecklistId(int checklistId, int checlistItemId)
+        public IList<ChecklistItem> GetChecklistItembyChecklistId(int checklistId, int checklistItemId)
         {
             List<ChecklistItem> data = new List<ChecklistItem>();
             try
             {
-                data = (List<ChecklistItem>)repo.GetChecklistItemById(checklistId,checlistItemId);
+                data = (List<ChecklistItem>)repo.GetChecklistItemById(checklistId, checklistItemId);
             }
             catch (Exception ex)
             {
 
                 throw;
             }
-            return (IList<ChecklistItem>)Ok(data);
+            return data;
         }
         //Update status checklist item by checklist item id
-        [System.Web.Http.HttpPost]
+        //[System.Web.Http.Route("{checklistid}/item/{checklistitemid}")]
+        [System.Web.Http.Route("~/api/checklist/{checklistid:int}/item/{checklistitemid:int}")]
+        [System.Web.Http.HttpPut]
         public HttpResponseMessage UpdateChecklistItemByChecklistId(int checklistId, ChecklistItem checklistItem)
         {
             string productId = string.Empty;
@@ -145,6 +163,8 @@ namespace JWTAuth.Controllers
             return responseMessage;
         }
         //Delete item by checklist item id
+        //[System.Web.Http.Route("{checklistid}/item/{checklistitemid}")]
+        [System.Web.Http.Route("~/api/checklist/{checklistid:int}/item/{checklistitemid:int}")]
         [System.Web.Http.HttpDelete]
         public HttpResponseMessage DeleteChecklistItem(int checklistId, int checklistItemId)
         {
@@ -165,7 +185,9 @@ namespace JWTAuth.Controllers
             return responseMessage;
         }
         //Rename item by checlist item id
-        [System.Web.Http.HttpPost]
+        //[System.Web.Http.Route("{checklistid}/item/{checklistitemid}")]
+        [System.Web.Http.Route("~/api/checklist/{checklistid:int}/item/{checklistitemid:int}")]
+        [System.Web.Http.HttpPut]
         public HttpResponseMessage UpdateChecklistItem(int checklistId, ChecklistItem checklistItem)
         {
             string productId = string.Empty;
