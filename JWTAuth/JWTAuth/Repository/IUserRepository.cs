@@ -10,5 +10,6 @@ namespace JWTAuth.Repository
     public interface IUserRepository
     {
         void CreateUser(User user);
+        User GetDataUser(User user);
     }
 }

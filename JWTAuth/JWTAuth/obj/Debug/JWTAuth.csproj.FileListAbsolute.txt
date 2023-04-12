@@ -62,3 +62,13 @@ E:\3. MY PROJECT MVC\JwtTokenWIthMvc\JWTAuth\JWTAuth\bin\Microsoft.CodeDom.Provi
 E:\3. MY PROJECT MVC\JwtTokenWIthMvc\JWTAuth\JWTAuth\obj\Debug\JWTAuth.csproj.CopyComplete
 E:\3. MY PROJECT MVC\JwtTokenWIthMvc\JWTAuth\JWTAuth\obj\Debug\JWTAuth.dll
 E:\3. MY PROJECT MVC\JwtTokenWIthMvc\JWTAuth\JWTAuth\obj\Debug\JWTAuth.pdb
+E:\3. MY PROJECT MVC\JwtTokenWIthMvc\JWTAuth\JWTAuth\bin\Microsoft.IdentityModel.Abstractions.dll
+E:\3. MY PROJECT MVC\JwtTokenWIthMvc\JWTAuth\JWTAuth\bin\Microsoft.IdentityModel.JsonWebTokens.dll
+E:\3. MY PROJECT MVC\JwtTokenWIthMvc\JWTAuth\JWTAuth\bin\Microsoft.IdentityModel.Logging.dll
+E:\3. MY PROJECT MVC\JwtTokenWIthMvc\JWTAuth\JWTAuth\bin\Microsoft.IdentityModel.Tokens.dll
+E:\3. MY PROJECT MVC\JwtTokenWIthMvc\JWTAuth\JWTAuth\bin\System.IdentityModel.Tokens.Jwt.dll
+E:\3. MY PROJECT MVC\JwtTokenWIthMvc\JWTAuth\JWTAuth\bin\Microsoft.IdentityModel.Abstractions.xml
+E:\3. MY PROJECT MVC\JwtTokenWIthMvc\JWTAuth\JWTAuth\bin\Microsoft.IdentityModel.JsonWebTokens.xml
+E:\3. MY PROJECT MVC\JwtTokenWIthMvc\JWTAuth\JWTAuth\bin\Microsoft.IdentityModel.Logging.xml
+E:\3. MY PROJECT MVC\JwtTokenWIthMvc\JWTAuth\JWTAuth\bin\Microsoft.IdentityModel.Tokens.xml
+E:\3. MY PROJECT MVC\JwtTokenWIthMvc\JWTAuth\JWTAuth\bin\System.IdentityModel.Tokens.Jwt.xml

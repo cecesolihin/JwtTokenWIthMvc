@@ -21,5 +21,17 @@ namespace JWTAuth.Repository
                 var exec = db.Execute(sql, new {user.UserName, user.Password,user.Email});
             }
         }
+
+        public User GetDataUser(User user)
+        {
+            var sql = @"select UserName, Password, Email From [dbo].[User] Where UserName =@Username and Password =@Password";
+            User dataUser = new User();
+            using (SqlConnection db = new SqlConnection(connectionString))
+            {
+                dataUser = db.QueryFirstOrDefault<User>(sql, new { user.UserName, user.Password });
+            }
+
+            return dataUser;
+        }
     }
 }
